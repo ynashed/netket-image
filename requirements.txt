@@ -1,0 +1,6 @@
+jupyterlab
+matlotlib
+netket
+numpy
+scipy
+tqdm
