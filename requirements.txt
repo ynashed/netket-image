@@ -1,5 +1,5 @@
 jupyterlab
-matlotlib
+matplotlib
 netket
 numpy
 scipy

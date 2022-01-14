@@ -1,5 +1,5 @@
 # Use an official pytorch runtime as a parent image
-FROM python:3.8-slim
+FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-runtime
 
 MAINTAINER Youssef Nashed "ynashed@slac.stanford.edu"
 
@@ -13,6 +13,7 @@ VOLUME ${SCRATCH_VOLUME}
 WORKDIR /work
 ADD requirements.txt /work/requirements.txt
 
+RUN pip install --upgrade "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_releases.html
 RUN pip install -r requirements.txt
 
 ADD . /work
