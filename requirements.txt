@@ -1,6 +1,5 @@
 jupyterlab
 matplotlib
 netket
-numpy
 scipy
 tqdm
