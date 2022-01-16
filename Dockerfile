@@ -23,10 +23,11 @@ RUN ln -s /usr/bin/python3 /usr/bin/python & \
     ln -s /usr/bin/pip3 /usr/bin/pip
 
 RUN pip install --upgrade pip
-RUN pip install numpy six wheel
+RUN pip install -r requirements.txt
 RUN git clone https://github.com/google/jax && cd jax && \
     python build/build.py --enable_cuda && pip install dist/*.whl && \
     cd .. && rm -rf jax
+RUN pip install netket==3.3.1
 
-#RUN pip install jax[cuda11] -f https://storage.googleapis.com/jax-releases/jax_releases.html
-RUN pip install -r requirements.txt
+ENV PATH=/usr/local/cuda/bin:$PATH \
+    LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
