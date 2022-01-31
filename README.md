@@ -10,4 +10,4 @@ To launch a Jupyter session on SDF, choose `Custom Singularity Image ...` under 
 export SINGULARITY_IMAGE_PATH=/sdf/group/ml/xpcs/singularity_images/netket-image-main_latest.sif
 function jupyter() { singularity exec --nv -B /sdf,/gpfs,/scratch,/lscratch ${SINGULARITY_IMAGE_PATH} jupyter $@; }
 ```
-in the `Commands to initate Jupyter` text areah (which should be editable with the custom image option selected). Pick a GPU and other parameters normally, and you should be good to go.
+in the `Commands to initate Jupyter` text area (which should be editable with the custom image option selected). Pick a GPU and other parameters normally, and you should be good to go.
